@@ -1,0 +1,108 @@
+{% extends 'base/base.html' %}
+{% block title %}
+<title>контакты</title>
+{% endblock %}
+{% block main %}
+<header class="header" id="header">
+		<section class="pg3_banner_section">
+			<div class="pg3_banner_bg">
+				<div class="pg2_banner_curtain">
+					<div class="pg2_banner_text pg3_banner_text container_lg" >
+						<p>контакты</p>
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		{% include 'nav/nav.html' %}
+	</header>
+	<div class="curtain_navbar" style="height:100vh !important;"></div>
+	<div class="map_face"></div>
+	<iframe class="google_map" src="https://www.google.com/maps/d/embed?mid=1KUWpAJRMOgiDJu729AT9BgBeIUI&ehbc=2E312F"></iframe>
+	<main class="mainpg3">
+		<div class="container_lg">
+			<div class="pg3_main_nav">
+				<div class="pg3_main_nav_items">
+					<ul>
+						<li>
+							<a>социальные сети </a>
+						</li>
+						<li class="social_media">
+							<a href="https://t.me/vodiyplast">
+								<i class="bi bi-telegram"></i>
+							</a>
+							<a href="https://instagram.com/vodiyplast">
+								<i class="bi bi-instagram"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="pg3_main_nav_items">
+					<ul>
+						<li>
+							<a>Водий пласт</a>
+						</li>
+						<li>
+							<a>Миллий тикланиш, 21 <br> Андижанский район</a>
+						</li>
+						<li>
+							<a href="tel:998 00 500 10 10">+998 00 500 10 10</a>
+						</li>
+						<li>
+							<a>Ежедневно<br>9:30-18:00</a>
+						</li>
+					</ul>
+				</div>
+				<div class="pg3_main_nav_items">
+					<ul>
+						<li>
+							<a>по любым вопросам</a>
+						</li>
+						<li>
+							<a href="mailto:vodiyplast@gmail.com">vodiyplast@gmail.com <br><span class="text">text</span></a>
+						</li>
+						<li>
+							<a href="tel:998 00 500 10 10">+998 00 500 10 10</a>
+						</li>
+						<li>
+							<a>Ежедневно<br>9:30-18:00</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container_lg">
+			<div class="contact_big_phone_number">
+				<p>
+					<a href="tel:998 00 500 10 00">+998 00 500 10 00</a>
+				</p>
+			</div>
+		</div>
+		<div class="contact_img">
+			<div class="img_block">
+				<a>
+					<img src="/static/images2/main_carousels/contact.png" alt="">
+				</a>
+			</div>
+		</div>
+	</main>
+	<footer class="footer footerpg3" id="footer">
+		<div class="container_lg">
+			<div class="footer_phone_number">
+				<p><a href="tel:998 00 500 10 00">+998 00 500 10 00</a></p>
+			</div>
+			<div class="footer_logo">
+				<a href="{% url 'main:index' %}">
+					<img src="/static/images/logo/logo.png" alt="">
+				</a>
+			</div>
+			<div class="footer_group">
+				<p>водий пласт 2022</p>
+				<p>сайт от MIAR group</p>
+			</div>
+		</div>
+	</footer>
+{% endblock %}
+{% block js %}
+<script src="/static/js/contact.js"></script>
+{% endblock %}

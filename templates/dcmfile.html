@@ -1,0 +1,20 @@
+{% for onfile in file %}
+<div class="dcm_container_items">
+    <div class="dcm_image">
+        <a href="{{onfile.file.url}}">
+            <img src="{{onfile.image.url}}" alt="{{onfile.image.name}}">
+        </a>
+    </div>
+    <div class="dcm_download">
+        <div class="document_name">
+            <p>{{onfile.name}}</p>
+        </div>
+        <div class="download">
+            <p class="file_size">{{onfile.get_size}}</p>
+            <a class="btn_download" href="{{onfile.file.url}}" download>
+                <button>скачать</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}

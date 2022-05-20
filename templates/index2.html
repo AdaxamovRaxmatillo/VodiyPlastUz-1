@@ -1,0 +1,273 @@
+{% extends 'base/base.html' %}
+{% block title %}
+<title>о компании</title>
+{% endblock %}
+{% block main %}
+<header class="header" id="header">
+		<section class="pg2_banner_section">
+			<div class="pg2_banner_img">
+				<a>
+	        		<picture>
+						 <source srcset="/static/images2/header/header_banner.png" media="(min-width: 992px)">
+						 <img class="mobile_banner_img" src="/static/images2/header/header_banner_mobile.png">
+					</picture>
+			    </a>
+				<div class="pg2_banner_curtain">
+					<div class="pg2_banner_text container_lg">
+						<p>Водий</p>
+						<p>пласт</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		{% include 'nav/nav.html' %}
+	</header>
+	<div class="curtain_navbar" style="height:100vh !important;"></div>
+	<main class="main2" id="main2">
+		<section class="pg2_section_text_top">
+			<div class="container_lg">
+				<p>
+					Компания ООО «водийПласт» (ООО «РТП») была основана в  2005 году, как производственная компания по выпуску полимерных труб  и фитингов для  нужд Российского и зарубежных рынков.
+				</p>
+			</div>
+		</section>
+		<section class="section_main_carousel pg2_section_main_carousel">
+			<div class="carousel_text_block pg2_carousel_text_block">
+				<p>На сегодняшний<br>день</p>
+			</div>
+			<div class="main_carousel_container">
+				<div class="main_carousel_images">
+					<div class="main_mobile_control">
+						<section class="swiper_mobile_control">
+							<div class="mobile_control_block">
+								<div class="swiper_mobile_counter main_mobile_counter"><p>1/3</p></div>
+								<div class="swiper_mobile_ponters">
+									<div onclick="change_main_decriment()">
+										<i class="bi bi-arrow-left"></i>
+									</div>
+									<div onclick="change_main_carousel()">
+										<i class="bi bi-arrow-right"></i>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="swiper main_swiper_img">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide main_swiper_slide clen">
+								<a>
+									<img src="/static/images2/main_carousels/carousel1_1.png" alt="">
+								</a>
+							</div>
+							<div class="swiper-slide main_swiper_slide clen">
+								<a>
+									<img src="/static/images2/main_carousels/carousel1_1.png" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main_carousel_text">
+					<div class="main_swiper_control">
+						<div class="main_swiper_circle">
+							<div class="ldBar progress_2" data-preset="circle">
+
+							</div>
+							<div class="main_swiper_circle_in">
+								<p class="main_swiper_counter" style="color:black;">
+									<span>1</span>
+								</p>
+								<p class="main_swiper_poitner" style="color:white;" onclick="change_main_carousel()">
+									<i class="bi bi-arrow-up-right"></i>
+								</p>
+								<p class="main_counter_number_small">
+									1/2
+								</p>
+							</div>
+						</div>
+						<div class="swiper_control_back_fon">
+
+						</div>
+					</div>
+					<div class="main_swiper_text pg2_main_swiper_text" style="color:white;">
+						<div class="swiper text_swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide main_swiper_text_slide">
+									<p>Имеет современное европейское оборудование: 25 экструзионных линий и 60 термопластавтоматов</p>
+								</div>
+								<div class="swiper-slide main_swiper_text_slide">
+									<p>Имеет современное европейское оборудование: 25 экструзионных линий и 60 термопластавтоматов </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section_counter">
+			<div class="frames_container">
+				<div class="counter_frames"></div>
+				<div class="counter_frames">
+					<p class="pg2_small_counter">ЛЕТ НА РЫНКЕ</p>
+					<p class="pg2_big_counter " data="5">0</p>
+				</div>
+				<div class="counter_frames"></div>
+				<div class="counter_frames">
+					<p class="pg2_small_counter">количество складов</p>
+					<p class="pg2_big_counter " data="2">0</p>
+				</div>
+				<div class="counter_frames"></div>
+				<div class="counter_frames">
+					<p class="pg2_small_counter">Производит продукции более </p>
+					<p class="pg2_big_counter" data="240">0</p>
+				</div>
+			</div>
+		</section>
+		<section class="section_pg2_carousel">
+			<div class="pg2_carousel_container">
+				<div class="name_counter_content">
+					<div class="counter2_block">
+						<div class="counter_frames counter_frame2"></div>
+						<div class="counter_frames counter_frame2">
+							<p class="pg2_small_counter">ЧЕЛОВЕК В КОМАНДЕ</p>
+							<p class="pg2_big_counter" data="60">0</p>
+						</div>
+					</div>
+					<div class="controlvs_name_carousel">
+						<div class="sw2_custom_control">
+							<div onclick="toLeft()">
+								<i class="bi bi-arrow-left"></i>
+							</div>
+							<div onclick="toRight()">
+								<i class="bi bi-arrow-right"></i>
+							</div>
+						 </div>
+						<div class="custom_control">
+							<div class="swiper pg2_swiper2_texts">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide pg2_slides2_texts">
+										<p>Александр<br>сорокин</p>
+									</div>
+									<div class="swiper-slide pg2_slides2_texts">
+										<p>Александр<br>сорокин</p>
+									</div>
+									<div class="swiper-slide pg2_slides2_texts">
+										<p>Александр<br>сорокин</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel_imgs">
+					<div class="swiper pg2_swiper2">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide pg2_slides2_imgs">
+								<a>
+									<img src="/static/images2/main_carousels/person1.png" alt="">
+								</a>
+							</div>
+							<div class="swiper-slide pg2_slides2_imgs">
+								<a>
+									<img src="/static/images2/main_carousels/person2.png" alt="">
+								</a>
+							</div>
+							<div class="swiper-slide pg2_slides2_imgs">
+								<a>
+									<img src="/static/images2/main_carousels/person3.png" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="inimgs_swiper">
+						<div class="swiper inswiper_img">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide inswiper_img_slide">
+									<p>ГЕНЕРАЛЬНЫЙ ДИРЕКТОР <br> водий пласт</p>
+								</div>
+								<div class="swiper-slide inswiper_img_slide">
+									<p>ГЕНЕРАЛЬНЫЙ ДИРЕКТОР <br> водий пласт</p>
+								</div>
+								<div class="swiper-slide inswiper_img_slide">
+									<p>ГЕНЕРАЛЬНЫЙ ДИРЕКТОР <br> водий пласт</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="controlvs_name_carousel controlvs_name_carousel_mobile">
+						<div class="sw2_custom_control">
+							<div onclick="toLeft()">
+								<i class="bi bi-arrow-left"></i>
+							</div>
+							<div onclick="toRight()">
+								<i class="bi bi-arrow-right"></i>
+							</div>
+						 </div>
+						<div class="custom_control">
+							<div class="swiper pg2_swiper2_texts_mobile">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide pg2_slides2_texts">
+										<p>Александр<br>сорокин</p>
+									</div>
+									<div class="swiper-slide pg2_slides2_texts">
+										<p>Александр<br>сорокин</p>
+									</div>
+									<div class="swiper-slide pg2_slides2_texts">
+										<p>Александр<br>сорокин</p>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</section>
+		<section class="section_career">
+			<div class="career_img">
+				<a>
+	        		<picture>
+						 <source srcset="/static/images2/header/career.png" media="(min-width: 992px)">
+						 <img src="/static/images2/header/career_mobile.png">
+					</picture>
+			    </a>
+			    <div class="bg_shadow">
+
+			    </div>
+			    <div class="career_curtain">
+			    	<a href="{% url 'main:documents' %}">
+			    	   <div class="pg2_circle_right">
+			    	      <i class="bi bi-arrow-right"></i>
+			    	   </div>
+			    	</a>
+			    </div>
+			    <div class="career_curtain2">
+			    	<div class="left_word">
+			    		<p>карьера</p>
+			    	</div>
+			    	<div class="right_word">
+			    		<p>В ВП</p>
+			    	</div>
+			    </div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer footerpg2" id="footer">
+		<div class="container_lg">
+			<div class="footer_phone_number">
+				<p><a href="tel:998 00 500 10 00">+998 00 500 10 00</a></p>
+			</div>
+			<div class="footer_logo">
+				<a href="{% url 'main:index' %}">
+					<img src="/static/images/logo/logo.png" alt="">
+				</a>
+			</div>
+			<div class="footer_group">
+				<p>водий пласт 2022</p>
+				<p>сайт от MIAR group</p>
+			</div>
+		</div>
+	</footer>
+{% endblock %}
+{% block js %}
+<script src="/static/js/index2.js"></script>
+{% endblock %}

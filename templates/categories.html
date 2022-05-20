@@ -1,0 +1,152 @@
+{% extends 'base/base.html' %}
+{% block title %}
+<title>продукты</title>
+{% endblock %}
+{% block main %}
+    <header class="header_dcm" id="header">
+		{% include 'nav/nav.html' %}
+	</header>
+	<main class="main_dcm">
+		<section>
+			<div class="right_documents_title_mobile" style=r:#FFCC01;">
+				{% for category in product_categories1 %}
+				{% if to == category.id %}
+					{{category.name}}
+				{% endif %}
+				{% endfor %}
+			</div>
+			<div class="container_dcm">
+				<div class="dcm_left_menu">
+					{% for category in product_categories1 %}
+					{% if to == category.id %}
+					<div class="categories_dcm_block categories_page checked_categories" data-id="{{category.id}}" onclick="checked(this)">
+						<p>{{category.name}}</p>
+						<p class="rotater">
+							<i class="bi bi-chevron-right"></i>
+						</p>
+					</div>
+					{% else %}
+					<div class="categories_dcm_block categories_page" data-id="{{category.id}}" onclick="checked(this)">
+						<p>{{category.name}}</p>
+						<p class="rotater">
+							<i class="bi bi-chevron-right"></i>
+						</p>
+					</div>
+					{% endif %}
+					<div class="category1_in_categories">
+						<ul class="category1_in_categories_items">
+							{% for category2 in procuct_categories2 %}
+								{% if category == category2.bind %}
+									{% if tocategory2 == category2.id %}
+										<li>
+											<a href="?ct1id={{category.id}}&ctid2={{category2.id}}" class="getct3" style="color:white !important;">{{category2.name}}</a>
+										</li>
+									{% else %}
+										<li>
+											<a href="?ct1id={{category.id}}&ctid2={{category2.id}}" class="getct3">{{category2.name}}</a>
+										</li>
+									{% endif %}
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+					{% endfor %}
+				</div>
+				<div class="right_documents right_categories">
+					<p class="right_documents_title right_categories_title">
+						{% for category in product_categories1 %}
+						{% if to == category.id %}
+							{{category.name}}
+						{% endif %}
+						{% endfor %}
+					</p>
+					<div class="category2_in_categories_block">
+						{% if procuct_categories3 %}
+							{% for category3 in procuct_categories3 %}
+							<div class="category2_in_categories">
+							<div class="category2_in_name_length">
+								<p>{{category3.name}}</p>
+								<p>( {{category3.len}} )</p>
+							</div>
+							<div class="category2_in_items">
+								<ul>
+									{% for product in products %}
+										{% if category3 == product.bind %}
+											{% if product.show %}
+												<li>
+													<a class="getproduct_single" href="get_product/?productid={{product.id}}" >{{product.name}}</a>
+												</li>
+											{% endif %}
+										{% endif %}
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+						{% endfor %}
+						{% elif product %}
+						<div class="single_product_block">
+							<div class="product_image">
+								<a href="{{product.img.url}}">
+									<img src="{{product.img.url}}" alt="{{product.name}}">
+								</a>
+							</div>
+							<div class="about_product">
+								<div class="product_category_name">
+									<p>{{product.bind}}</p>
+								</div>
+								<div class="product_description">
+									<p>{{product.name}}</p>
+								</div>
+								<div class="product_properties">
+									<ul>
+										{% for property in properties %}
+										<li>
+											<p>{{property.name}}</p>
+											<p>{{property.value}}</p>
+										</li>
+										{% endfor %}
+									</ul>
+								</div>
+								<div class="products_btn_group">
+									<div class="download_list_btn">
+										<a href="/static/documents/sample.pdf" download>
+											<button>Скачать прайс лист</button>
+										</a>
+									</div>
+									<div class="ask_btn">
+										<a href="/ask/">
+											<button>задать вопрос</button>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						{% else %}
+						<h1 class='no_result'>продукт не найден</h1>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer footerpg3" id="footer">
+		<div class="container_lg">
+			<div class="footer_phone_number">
+				<p><a href="tel:998 00 500 10 00">+998 00 500 10 00</a></p>
+			</div>
+			<div class="footer_logo">
+				<a href="{% url 'main:index' %}">
+					<img src="/static/images/logo/logo.png" alt="">
+				</a>
+			</div>
+			<div class="footer_group">
+				<p>водий пласт 2022</p>
+				<p>сайт от MIAR group</p>
+			</div>
+		</div>
+	</footer>
+	<div class="right_documents_title" style="display: none !important;"></div>
+{% endblock %}
+{% block js %}
+<script src="/static/js/categories.js"></script>
+{% endblock %}

@@ -1,0 +1,35 @@
+
+.for_category_under{
+	transform: translateY(0%) !important;
+	opacity: 1 !important;
+}
+
+.for_category_under_text p:nth-child(2){
+	transform: translateY(0%) !important;
+	opacity: 1 !important;
+}
+
+.checked_category{
+	background: #FFCC01 !important;
+	border: 1px solid #FFCC01 !important;
+}
+
+.checked_catalog{
+	background:#FFCC01 !important;
+	color: white !important;
+}
+
+.checked_categories{
+	color:#FFCC01 !important;
+	border-bottom: none !important;
+}
+
+.checked_categories_rotate{
+	transform: rotate(90deg);
+}
+
+.categories_height{
+max-height:100% !important;
+transition: max-height 1s ease-out;
+}
+

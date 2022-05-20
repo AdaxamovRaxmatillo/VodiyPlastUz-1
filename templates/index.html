@@ -1,0 +1,484 @@
+{% extends 'base/base.html' %}
+{% block title %}
+<title>домашняя страница</title>
+{% endblock %}
+
+{% block main %}
+<header class="header" id="header">
+		<section class="banner_section">
+			<div class="swiper banner_swiper">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide banner_swiper_slides">
+			        	<a>
+			        		<picture>
+								 <source srcset="/static/images/header/banner1.png" media="(min-width: 768px)">
+								 <img class="mobile_banner_img" src="/static/images/header/banner1m.png">
+							</picture>
+			        	</a>
+			        	<div class="banner_curtain">
+			        		<div class="banner_contents">
+			        			<div class="banner_about">
+			        				<div class="container_lg">
+			        					<p>Отопления</p>
+			        				</div>
+			        			</div>
+			        			<div class="system_text_about_system">
+			        				<div class="container_lg">
+			        					<div class="banner_bottom_texts">
+			        						<div class="system_text">
+			        							<p>
+			        								Система ALPHA, система SIGMA,<br>система DELTA, система OMEGA.
+			        							</p>
+			        						</div>
+			        						<div class="about_system_text">
+			        							<p>Системы<br>Отопления</p>
+			        						</div>
+			        					</div>
+			        				</div>
+			        			</div>
+			        		</div>
+			        	</div>
+			        </div>
+			        <div class="swiper-slide banner_swiper_slides">
+			        	<a>
+			        		<picture>
+								 <source srcset="/static/images/header/banner2.png" media="(min-width: 768px)">
+								 <img class="mobile_banner_img" src="/static/images/header/banner2m.png" >
+							</picture>
+			        	</a>
+			        	<div class="banner_curtain">
+			        		<div class="banner_contents">
+			        			<div class="banner_about">
+			        				<div class="container_lg">
+			        					<p>водоснабжения</p>
+			        				</div>
+			        			</div>
+			        			<div class="system_text_about_system">
+			        				<div class="container_lg">
+			        					<div class="banner_bottom_texts">
+			        						<div class="system_text">
+			        							<p>
+			        								Система ALPHA, система SIGMA,<br>система DELTA, система GAMMA.
+			        							</p>
+			        						</div>
+			        						<div class="about_system_text">
+			        							<p>Системы<br>водоснабжения</p>
+			        						</div>
+			        					</div>
+			        				</div>
+			        			</div>
+			        		</div>
+			        	</div>
+			        </div>
+			        <div class="swiper-slide banner_swiper_slides">
+			        	<a>
+			        		<picture>
+								 <source srcset="/static/images/header/banner3.png" media="(min-width: 768px)">
+								 <img class="mobile_banner_img" src="/static/images/header/banner3m.png" >
+							</picture>
+			        	</a>
+			        	<div class="banner_curtain">
+			        		<div class="banner_contents">
+			        			<div class="banner_about">
+			        				<div class="container_lg">
+			        					<p>канализация</p>
+			        				</div>
+			        			</div>
+			        			<div class="system_text_about_system">
+			        				<div class="container_lg">
+			        					<div class="banner_bottom_texts">
+			        						<div class="system_text">
+			        							<p>
+													Система BETA, система BETA <br> ELITE, система BETA ORANGE
+			        							</p>
+			        						</div>
+			        						<div class="about_system_text">
+			        							<p>Системы<br>канализация</p>
+			        						</div>
+			        					</div>
+			        				</div>
+			        			</div>
+			        		</div>
+			        	</div>
+			        </div>
+			    </div>
+		    </div>
+		</section>
+		{% include 'nav/nav.html' %}
+		<div class="curtain_navbar"></div>
+		<section class="swiper_control_section">
+			<div style="position:relative; width:100%; height:100%;">
+				<div class="control_back_counter">
+					<div class="counter_texts">
+
+					</div>
+				</div>
+				<div class="circle">
+					<div class="ldBar progress_1" data-preset="circle">
+
+					</div>
+					<div class="circle_in">
+						<p class="counter_number">
+							<span>1</span>
+						</p>
+						<p class="counter_pointer" onclick="swipercontrol()">
+							<i class="bi bi-arrow-up-right"></i>
+						</p>
+						<p class="counter_number_small">
+							1/3
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="header_to_down">
+			<div class="container_lg">
+				<div class="down_circle">
+					<a href="#main">
+						<i class="bi bi-arrow-down"></i>
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="swiper_mobile_control">
+			<div class="mobile_control_block">
+				<div class="swiper_mobile_counter">
+					<p>1/3</p>
+				</div>
+				<div class="swiper_mobile_ponters">
+					<div onclick="swipercontroldecriment()">
+						<i class="bi bi-arrow-left"></i>
+					</div>
+					<div onclick="swipercontrol()">
+						<i class="bi bi-arrow-right"></i>
+					</div>
+				</div>
+			</div>
+		</section>
+	</header>
+	<main class="main" id="main">
+		<section class="category_section">
+			<div class="category_container">
+				{% for category in product_categories1 %}
+				<div class="category_carts" dataid="{{category.id}}">
+					<div class="category_under" data-url="categories?ct1id={{category.id}}">
+						<div class="category_under_img_block">
+							<a>
+				        		<picture>
+									 <source srcset="{{category.imgunder.url}}" media="(min-width: 992px)">
+									 <img src="{{category.imgmobile.url}}">
+								</picture>
+			        		</a>
+							<div class="category_under_img_text">
+								<p></p>
+								<p>
+									<a href="categories?ct1id={{category.id}}">{{category.name}}</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="category_on">
+						<div class="category_on_img_block">
+							<a>
+								<img src="{{category.imgon.url}}" alt="">
+							</a>
+							<div class="category_on_curtain">
+								<div class="category_title">
+									<p>{{category.short}}</p>
+								</div>
+								<div class="about_category">
+									<p>{{category.name}}</p>
+								</div>
+								<div class="go_category">
+									<div class="go_category_btn">
+										<a href="categories?ct1id={{category.id}}">
+											<i class="bi bi-arrow-right"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="category_on_body">
+							<ul class="category_on_body_lists">
+								{% for category2 in procuct_categories2 %}
+									{% if category == category2.bind %}
+										<li>
+											<a href="categories?ct1id={{category.id}}&ctid2={{category2.id}}">{{category2.name}}</a>
+										</li>
+									{% endif %}
+								{% endfor %}
+							</ul>
+							<p class="category_on_body_tell">
+								<a>+998 00 500 10 00</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</section>
+		<section class="section_main_carousel">
+			<div class="carousel_text_block">
+				<p>Почему нас <br class="br_main_swiper"> выберают</p>
+			</div>
+			<div class="main_carousel_container">
+				<div class="main_carousel_images">
+					<div class="main_mobile_control">
+						<section class="swiper_mobile_control">
+							<div class="mobile_control_block">
+								<div class="swiper_mobile_counter main_mobile_counter"><p>1/3</p></div>
+								<div class="swiper_mobile_ponters">
+									<div onclick="change_main_decriment()">
+										<i class="bi bi-arrow-left"></i>
+									</div>
+									<div onclick="change_main_carousel()">
+										<i class="bi bi-arrow-right"></i>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="swiper main_swiper_img">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide main_swiper_slide clen">
+								<a>
+									<img src="/static/images/main_carousel/carousel1_1.png" alt="">
+								</a>
+							</div>
+							<div class="swiper-slide main_swiper_slide clen">
+								<a>
+									<img src="/static/images/main_carousel/carousel1_2.png" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main_carousel_text">
+					<div class="main_swiper_control">
+						<div class="main_swiper_circle">
+							<div class="ldBar progress_2" data-preset="circle">
+
+							</div>
+							<div class="main_swiper_circle_in">
+								<p class="main_swiper_counter">
+									<span>1</span>
+								</p>
+								<p class="main_swiper_poitner" onclick="change_main_carousel()">
+									<i class="bi bi-arrow-up-right"></i>
+								</p>
+								<p class="main_counter_number_small">
+									1/2
+								</p>
+							</div>
+						</div>
+						<div class="swiper_control_back_fon">
+
+						</div>
+					</div>
+					<div class="main_swiper_text">
+						<div class="swiper text_swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide main_swiper_text_slide">
+									<p>Господа, консультация с широким активом прекрасно подходит для реализации благоприятных перспектив. Следует отметить, что повышение уровня гражданского сознания позволяет выполнить важные задания по разработке направлений прогрессивного развития.</p>
+								</div>
+								<div class="swiper-slide main_swiper_text_slide">
+									<p>Господа, консультация с широким активом прекрасно подходит для реализации благоприятных перспектив. Следует отметить, что повышение уровня гражданского сознания позволяет выполнить важные задания по разработке направлений прогрессивного развития.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section_about_factory">
+			<div class="factory_itemas_container">
+				<div class="factory_numbers">
+					<div class="number_text">
+						<p>Годовая переработка сырья (тонна)</p>
+						<p class="mcounter" data="3000">0</p>
+					</div>
+					<div class="number_text">
+						<p>видов продукции</p>
+						<p class="mcounter" data="240">0</p>
+					</div>
+				</div>
+				<div class="factory_images">
+					<a>
+						<picture>
+							 <source srcset="/static/images/main_carousel/carousel1_2.png" media="(min-width: 992px)">
+							 <img src="/static/images/main_carousel/factory_mobile.png">
+						</picture>
+					</a>
+				</div>
+			</div>
+			<div class="number_text_bottom">
+				<p>складских помещений (m  )</p>
+				<p class="mcounter" data="2000" style="color:#FFCC01;">0</p>
+			</div>
+		</section>
+		<section class="section_main_carousel" style="margin-top:0;">
+			<div class="carousel_text_block carousel_text_block_bottom">
+				<p>Публикации</p>
+			</div>
+			<div class="main_carousel_container main_carousel_container_bottom">
+				<div class="main_carousel_images">
+					<div class="main_mobile_control">
+						<section class="swiper_mobile_control">
+							<div class="mobile_control_block">
+								<div class="swiper_mobile_counter main_mobile_counter fmain_mobile_counter"><p>1/3</p></div>
+								<div class="swiper_mobile_ponters">
+									<div onclick="fswipercontrol_secriment()">
+										<i class="bi bi-arrow-left"></i>
+									</div>
+									<div onclick="fswipercontrol()">
+										<i class="bi bi-arrow-right"></i>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="swiper main_swiper_img2">
+						<div class="swiper-wrapper">
+							{% for post in posts %}
+								<div class="swiper-slide main_swiper_slide flen">
+									<a>
+										<img src="{{post.img.url}}" alt="">
+									</a>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="main_carousel_text">
+					<div class="main_swiper_control">
+						<div class="main_swiper_circle">
+							<div class="ldBar progress_3" data-preset="circle">
+
+							</div>
+							<div class="main_swiper_circle_in">
+								<p class="main_swiper_counter fcounter_big">
+									<span>1</span>
+								</p>
+								<p class="main_swiper_poitner"  onclick="fswipercontrol()">
+									<i class="bi bi-arrow-up-right"></i>
+								</p>
+								<p class="main_counter_number_small fcounter">
+									1/2
+								</p>
+							</div>
+						</div>
+						<div class="swiper_control_back_fon">
+
+						</div>
+					</div>
+					<div class="main_swiper_text">
+						<div class="swiper text_swiper2">
+							<div class="swiper-wrapper">
+								{% for post in posts %}
+									<div class="swiper-slide main_swiper_text_slide">
+										<p>{{post.text}}</p>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section_ordering">
+			<div class="professionals_text">
+				<p>Закажите монтаж</p>
+				<p>у профессионалов</p>
+			</div>
+			<div class="not_selected_text" id="category_form">
+				<p><i class="bi bi-arrow-down"></i> Пожалуйста, выберите категорию</p>
+			</div>
+			<div class="ordering_container">
+				<div class="ordering_form_contents">
+					<div class="text_contact_details">
+						<p>Укажите<br>контактные данные</p>
+					</div>
+					<div class="contact_form">
+						<form method="POST" class="form">
+							<input type="text" id="name" name="text" placeholder="Имя" required>
+							<input type="number" id="num" name="number" placeholder="+998 __ ___-__-__" required>
+							<select class="city" required>
+								{% for city in cities %}
+									<option value="{{city.id}}">{{city.name}}</option>
+								{% endfor %}
+							</select>
+							<textarea placeholder="сообшение" id="message" required></textarea>
+							<input type="submit" value="отправить">
+						</form>
+					</div>
+				</div>
+				<div class="ordering_category_contents" >
+					<div class="category_frames">
+						{% for category in product_categories1 %}
+						<div class="category_frames_items" data-category="{{category.id}}" onclick="checked_category(this)">
+							<p>{{category.short}}</p>
+							<p class="category_checked">
+								<i class="bi bi-check2"></i>
+							</p>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="category_checked_img">
+						<a>
+							<img src="/static/images/main_carousel/category.png" alt="">
+						</a>
+						<div class="category_checked_img_text">
+							<p>Разработаем проект, скомплектуем по ценам завода, выполним монтаж «под ключ», дадим гарантию завода на оборудование и работы 10 лет.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<div class="ask_alert" onclick="hidden_alert(this)">
+		<div class="alert_block">
+			<p class="status"><i class="bi bi-check2"></i><br>Успех</p>
+			<p class="status_text">Мы свяжемся с вами</p>
+		</div>
+	</div>
+	<div class="waiter">
+		<div class="lds-roller">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	{% if request.user.is_staff %}
+	<div class="to_admin_panel">
+		<a href="{% url 'main2:admin_main' %}">
+			<i class="bi bi-person-fill"></i> ты админ
+		</a>
+	</div>
+	{% endif %}
+	<footer class="footer" id="footer">
+		<div class="container_lg">
+			<div class="footer_phone_number">
+				<p><a href="tel:998 00 500 10 00">+998 00 500 10 00</a></p>
+			</div>
+			<div class="footer_logo">
+				<a href="{% url 'main:index' %}">
+					<img src="/static/images/logo/logo.png" alt="">
+				</a>
+			</div>
+			<div class="footer_group">
+				<p>водий пласт 2022</p>
+				<p>сайт от MIAR group</p>
+			</div>
+		</div>
+	</footer>
+
+{% endblock %}
+
+{% block js %}
+<script src="/static/js/index.js"></script>
+{% endblock %}

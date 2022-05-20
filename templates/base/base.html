@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% block title %}
+	{% endblock %}
+	<link rel="icon" href="/static/images/logo/logo.png" type="image/gif" sizes="16x16">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/js.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+</head>
+<body>
+	{% block main %}
+	{% endblock %}
+	<script src="/static/js/progress.js"></script>
+	<script src="/static/js/swiper.js"></script>
+	{% block js %}
+	{% endblock %}
+</body>
+</html>

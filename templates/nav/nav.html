@@ -1,0 +1,55 @@
+<section class="navbar_section">
+    <div class="container_lg">
+        <nav class="navbar_container">
+            <div class="navbar_left_items">
+                <div class="navbar_logo">
+                    <a href="{% url 'main:index' %}">
+                        <img src="/static/images/logo/logo.png">
+                    </a>
+                </div>
+<!--                <div class="language_desktop">-->
+<!--                    <select>-->
+<!--                        <option selected>Рус</option>-->
+<!--                        <option>En</option>-->
+<!--                        <option>Uz</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+                <div class="navbar_control" onclick="controlnavbar()">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="navbar_right_items">
+                <ul>
+                    <li>
+                        <a href="/static/documents/sample.pdf" download class="link_top">пРАЙС-ЛИСТ</a>
+                        <a href="/static/documents/sample.pdf" download class="link_bottom">пРАЙС-ЛИСТ</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'main:company' %}" target="_blank" class="link_top">О компании</a>
+                        <a href="{% url 'main:company' %}" target="_blank" class="link_bottom">О компании</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'main:categories' %}?ct1id=1&ctid2=1" target="_blank" class="link_top">Продукты</a>
+                        <a href="{% url 'main:categories' %}?ct1id=1&ctid2=1" target="_blank" class="link_bottom">Продукты</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'main:documents' %}" target="_blank" class="link_top">Профессионалам</a>
+                        <a href="{% url 'main:documents' %}" target="_blank" class="link_bottom">Профессионалам</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'main:contact' %}" target="_blank" class="link_top">Контакты</a>
+                        <a href="{% url 'main:contact' %}" target="_blank" class="link_bottom">Контакты</a>
+                    </li>
+<!--                    <li class="language_mobile">-->
+<!--                        <select>-->
+<!--                            <option selected>Рус</option>-->
+<!--                            <option>En</option>-->
+<!--                            <option>Uz</option>-->
+<!--                        </select>-->
+<!--                    </li>-->
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>

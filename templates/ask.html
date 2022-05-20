@@ -1,0 +1,119 @@
+{% extends 'base/base.html' %}
+{% block title %}
+<title>задать</title>
+{% endblock %}
+{% block main %}
+<header class="header" id="header">
+		<section class="pg2_banner_section">
+			<div class="pg2_banner_img">
+				<a>
+	        		<picture>
+						 <source srcset="/static/images/ask/ask.png" media="(min-width: 992px)">
+						 <img class="mobile_banner_img" src="/static/images/ask/askmobile.png">
+					</picture>
+			    </a>
+				<div class="pg2_banner_curtain" style="height:99.4%;">
+					<div class="pg2_banner_text container_lg">
+						<p>задать</p>
+						<p>вопрос</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		{% include 'nav/nav.html' %}
+	</header>
+	<div class="curtain_navbar" style="height:100vh !important;"></div>
+	<main class="main3">
+		<div class="container_lg">
+			<form method="POST" id="form">
+				<div class="ask_input_blocks">
+					<div class="input_blocks">
+						<div class="ask_inputs">
+							<input type="text" placeholder="ваше Имя *" required class="ask_input_name">
+						</div>
+						<div class="ask_inputs">
+							<input type="number" placeholder="+998  __ ___-__-__ *"
+								   required class="ask_input_number"
+							       pattern="[+998]{4}[0-9]{2}[0-9]{3}[0-9]{2}[0-9]{2}">
+						</div>
+						<div class="ask_inputs">
+							<select class="ask_input_select_city" required>
+								{% for city in cities %}
+								<option value="{{ city.id}}">{{city.name}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="ask_inputs">
+							<input type="email" placeholder="E-mail" class="ask_input_email">
+						</div>
+					</div>
+					<div class="input_blocks">
+						<div class="ask_inputs">
+							<select class="ask_input_select_cat" required>
+								{% for category in category1 %}
+									<option value="{{category.id}}">{{category.name}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="ask_inputs ask_inputs_message">
+							<textarea placeholder="Сообщение: *" required class="ask_input_mess"></textarea>
+						</div>
+					</div>
+					<div class="input_blocks input_blocks_last">
+						<div class="ask_inputs ask_inputs_code_img">
+							<img src="/static/images/ask/shuffle_{{ver}}.png" alt="" class="verification_img">
+							<span>
+								Поменять<br class="ask_br">картинку
+							</span>
+						</div>
+						<div class="ask_inputs ask_inputs_code">
+							<input type="text" name="verification" required class="ask_input">
+							<div class="submit">
+								<label>* Обязательные поля</label>
+								<input type="submit" value="отправить">
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</main>
+	<div class="ask_alert" onclick="hidden_alert(this)">
+		<div class="alert_block">
+			<p class="status"><i class="bi bi-check2"></i><br>Успех</p>
+			<p class="status_text">Мы свяжемся с вами</p>
+		</div>
+	</div>
+	<div class="waiter">
+		<div class="lds-roller">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<footer class="footer footerpg3" id="footer">
+		<div class="container_lg">
+			<div class="footer_phone_number">
+				<p><a href="tel:998 00 500 10 00">+998 00 500 10 00</a></p>
+			</div>
+			<div class="footer_logo">
+				<a href="{% url 'main:index' %}">
+					<img src="/static/images/logo/logo.png" alt="">
+				</a>
+			</div>
+			<div class="footer_group">
+				<p>водий пласт 2022</p>
+				<p>сайт от MIAR group</p>
+			</div>
+		</div>
+	</footer>
+{% endblock %}
+{% block js %}
+<script src="/static/js/contact.js"></script>
+<script src="/static/js/ask.js"></script>
+{% endblock %}

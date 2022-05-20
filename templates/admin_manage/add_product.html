@@ -1,0 +1,73 @@
+{% extends './baseadmin/base_panel.html' %}
+{% block title_panel %}
+<title>Admin Products Page</title>
+{% endblock %}
+{% block main_panel %}
+<div class="right_panel_title right_panel_title_add">
+    <p class="product_text">Продукты</p>
+</div>
+<!-- backendan kategoriya id si kelyabdi -->
+<div class="add_product_block">
+    <div class="new_product_img">
+        <p>Фото *</p>
+        <div class="new_img_preview">
+            <label for="new_product_img_upload">
+                <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.75 28.4375H11.25C4.4625 28.4375 1.5625 25.5375 1.5625 18.75V11.25C1.5625 4.4625 4.4625 1.5625 11.25 1.5625H18.75C25.5375 1.5625 28.4375 4.4625 28.4375 11.25V18.75C28.4375 25.5375 25.5375 28.4375 18.75 28.4375ZM11.25 3.4375C5.4875 3.4375 3.4375 5.4875 3.4375 11.25V18.75C3.4375 24.5125 5.4875 26.5625 11.25 26.5625H18.75C24.5125 26.5625 26.5625 24.5125 26.5625 18.75V11.25C26.5625 5.4875 24.5125 3.4375 18.75 3.4375H11.25Z" fill="white"/>
+                    <path d="M11.25 13.4375C9.35 13.4375 7.8125 11.9 7.8125 10C7.8125 8.1 9.35 6.5625 11.25 6.5625C13.15 6.5625 14.6875 8.1 14.6875 10C14.6875 11.9 13.15 13.4375 11.25 13.4375ZM11.25 8.4375C10.3875 8.4375 9.6875 9.1375 9.6875 10C9.6875 10.8625 10.3875 11.5625 11.25 11.5625C12.1125 11.5625 12.8125 10.8625 12.8125 10C12.8125 9.1375 12.1125 8.4375 11.25 8.4375Z" fill="white"/>
+                    <path d="M3.3375 24.625C3.0375 24.625 2.7375 24.475 2.5625 24.2125C2.275 23.7875 2.3875 23.2 2.825 22.9125L8.9875 18.775C10.3375 17.8625 12.2 17.975 13.425 19.0125L13.8375 19.375C14.4625 19.9125 15.525 19.9125 16.1375 19.375L21.3375 14.9125C22.6625 13.775 24.75 13.775 26.0875 14.9125L28.125 16.6625C28.5125 17 28.5625 17.5875 28.225 17.9875C27.8875 18.375 27.3 18.425 26.9 18.0875L24.8625 16.3375C24.2375 15.8 23.175 15.8 22.55 16.3375L17.35 20.8C16.025 21.9375 13.9375 21.9375 12.6 20.8L12.1875 20.4375C11.6125 19.95 10.6625 19.9 10.025 20.3375L3.8625 24.475C3.7 24.575 3.5125 24.625 3.3375 24.625Z" fill="white"/>
+                </svg>
+            </label>
+            <img src="" class="new_product_img_uploaded">
+            <input type="file" id="new_product_img_upload" onchange="new_product_img()">
+        </div>
+    </div>
+    <div class="new_product_about">
+        <div class="new_product_name">
+            <p style="margin-bottom:10px;">наименование товара</p>
+            <div class="product_inputs">
+                <input type="text" onkeyup="check_input(this)">
+            </div>
+        </div>
+        <div class="new_product_properties">
+            <div class="new_product_inputs properties_repeat">
+                <div class="product_inputs">
+                    <p style="margin-bottom:10px;">столбец значений</p>
+                         <input type="text">
+                    </div>
+                    <div class="product_inputs">
+                        <p style="margin-bottom:10px;">ценность</p>
+                    <div>
+                        <input type="text">
+                        <a onclick="delete_column(this)">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new_product_properties">
+            <div class="new_product_inputs">
+                <div class="product_inputs">
+                    <input type="button" value="добавить столбец+" onclick="add_column()">
+                </div>
+                <div class="product_inputs">
+                    <input type="button" value="Сохранить"
+                           style="opacity:0.5;"
+                           class="save_product"
+                           onclick="create_product({{category3_id}},this)"
+                           disabled="none">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--                <div class="product_inputs">-->
+<!--                    <p style="margin-bottom:10px;">столбец значений</p>-->
+<!--                    <input type="text" class="product_column_input1">-->
+<!--                </div>-->
+<!--                <div class="product_inputs">-->
+<!--                    <p style="margin-bottom:10px;">ценность</p>-->
+<!--                    <input type="text" class="product_column_value1">-->
+<!--                </div>-->
+{% endblock %}

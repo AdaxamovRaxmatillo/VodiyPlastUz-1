@@ -1,0 +1,71 @@
+{% extends 'base/base.html' %}
+{% block title %}
+<title>профессионалам</title>
+{% endblock %}
+{% block main %}
+<header class="header_dcm" id="header">
+    <!--navbar_section_dcm-->
+		{% include 'nav/nav.html' %}
+	</header>
+	<main class="main_dcm">
+		<section>
+			<div class="right_documents_title_mobile">
+				Документы для скачивания
+			</div>
+			<div class="container_dcm">
+				<div class="dcm_left_menu">
+					{% for category in categories %}
+						<div class="categories_dcm_block" data="{{category.id}}"  onclick="checked(this)">
+							<p>{{category.name}}</p>
+							<p>
+								<i class="bi bi-chevron-right"></i>
+							</p>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="right_documents">
+					<div class="loader">
+						<div class="lds-roller">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+					</div>
+					<p class="right_documents_title">
+						Документы для скачивания
+					</p>
+					<div class="dcm_main_container">
+
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer footerpg3" id="footer">
+		<div class="container_lg">
+			<div class="footer_phone_number">
+				<p><a href="tel:998 00 500 10 00">+998 00 500 10 00</a></p>
+			</div>
+			<div class="footer_logo">
+				<a href="{% url 'main:index' %}">
+					<img src="/static/images/logo/logo.png" alt="">
+				</a>
+			</div>
+			<div class="footer_group">
+				<p>водий пласт 2022</p>
+				<p>сайт от MIAR group</p>
+			</div>
+		</div>
+	</footer>
+
+{% endblock %}
+{% block js %}
+<script src="/static/js/documents.js"></script>
+{% endblock %}
+
+
